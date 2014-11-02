@@ -1,0 +1,7 @@
+{
+  "name": "Live Search",
+  "version": "0.0.1",
+  "dependencies": {
+    "semantic": "0.19.3" 
+  }
+}

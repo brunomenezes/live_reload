@@ -1,0 +1,52 @@
+{
+"settings":{
+	"index":{
+		"analysis":{
+			"analyzer":{
+				"analyzer_conteudo":{
+					"tokenizer":"keyword",
+					"filter":"lowercase"
+				},
+				"analyzer_conteudo_folding":{
+					"tokenizer":"keyword",
+					"filter":["lowercase", "asciifolding"]
+				}			
+			 }
+		 }
+	}
+},
+"mappings":{
+	"suggestions":{
+		"properties":{
+			"suggestion":{
+				"search_analyzer":"analyzer_conteudo_folding",
+				"index_analyzer":"analyzer_conteudo_folding",
+				"type":"string",
+				"fields":{
+					"folded":{
+						"type":"string",
+						"search_analyzer":"analyzer_conteudo",
+						"index_analyzer":"analyzer_conteudo"
+					}
+				}
+			}		
+		}
+	},
+	"hightlights":{
+		"properties":{
+			"queries":{
+				"search_analyzer":"analyzer_conteudo_folding",
+				"index_analyzer":"analyzer_conteudo_folding",
+				"type":"string",
+				"fields":{
+					"folded":{
+						"type":"string",
+						"index_analyzer":"analyzer_conteudo",
+						"search_analyzer":"analyzer_conteudo"
+					}
+				}
+			}
+		}
+	}
+}
+}

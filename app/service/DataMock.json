@@ -1,0 +1,40 @@
+{
+   "hightlights":[
+      {
+         "title":"Pop &amp; Art",
+         "url":"http://g1.globo.com/pop-arte/index.html",
+         "logo":"http://s.glbimg.com/bu/i/fc/5fb2e18d-a47f-4bb8-9a7e-b66871cf53c0.png",
+         "queries":[
+            "musica",
+            "pop",
+            "art",
+            "arte",
+            "cultura",
+            "shows"
+         ]
+      },
+      {
+         "title":"Pol&iacute;tica",
+         "url":"http://g1.globo.com/politica/index.html",
+         "logo":"http://s.glbimg.com/bu/i/fc/5fb2e18d-a47f-4bb8-9a7e-b66871cf53c0.png",
+         "queries":[
+            "elei&ccedil;&otilde;es",
+            "pol&iacute;tica",
+            "dilma",
+            "a&eacute;cio",
+            "apura&ccedil;&atilde;o"
+         ]
+      }
+   ],
+   "suggestions":[
+      "futebol brasileiro",
+      "futebol americano",
+      "futebol",
+      "musica",
+      "musicas",
+      "musica inedita de raul",
+      "politica entre dilma e aecio",
+      "politica",
+      "politica macroeconomica"
+   ]
+}
