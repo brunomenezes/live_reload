@@ -10,6 +10,9 @@ pids
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
 
+# temporary files
+.DS_Store
+
 # Dependency directory
 # Deployed apps should consider commenting this line out:
 # see https://npmjs.org/doc/faq.html#Should-I-check-my-node_modules-folder-into-git
