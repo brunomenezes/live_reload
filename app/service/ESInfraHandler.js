@@ -7,7 +7,7 @@ var S = require('string');
 var _ = require('lodash');
 var es= require('elasticsearch');
 var client = new es.Client();
-var QueryObj = require('../Objects/QueryObj');
+var QueryObj = require('../objects/QueryObj');
 
 module.exports = new function(){
 	var request_config = {
@@ -63,20 +63,18 @@ module.exports = new function(){
 	}
 
 	this.searchBy = function(word){
+		var defer = Q.defer();
 		var multiMatchQuery = new QueryObj(word,'phrase_prefix').multi_match();
 		client.search({
 			index:'conteudo',
 			body:multiMatchQuery			
 		}, function(e,r){
 			if(e)
-				console.error(e.message);
-			else{
-				_.each(r.hits.hits, function(obj){
-					console.log(obj);
-				});				
-			}
-
+				defer.reject(e.message);			
+			else
+				defer.resolve(_.map(r.hits.hits , function(obj){ return {type:obj._type, source:obj._source};}));
 		});
+		return defer.promise;
 	}
 
 	var _decode = function(string){
